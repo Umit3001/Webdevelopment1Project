@@ -1,0 +1,50 @@
+.card-img-top{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    display: center;
+}
+
+.card {
+    margin: 10px;
+    width: 300px;
+    height: 550px;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.col-4 {
+    flex: 0 0 auto; 
+    width: 350px;
+}
+
+.card-text-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#sortPriceAsc, #sortPriceDesc {
+    background-color: #484141;
+    border: none;
+    color: white;
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 20px; 
+}
+
+#sortPriceAsc:hover, #sortPriceDesc:hover {
+   background-color: #585252;
+}
+
+
+
+
+

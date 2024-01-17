@@ -1,0 +1,8 @@
+.product-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.order-details {
+    display: none;
+}
