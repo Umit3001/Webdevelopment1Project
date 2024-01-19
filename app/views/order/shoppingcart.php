@@ -26,7 +26,7 @@ include __DIR__ . '/../basiclayout/header.php';
                     <td>
                         <form method="post" action="/shoppingcart/update_cart" class="quantity-form">
                             <input type="hidden" name="order_item_id" value="<?= $item->order_item_id ?>">
-                            <input type="number" name="quantity" value="<?= $item->quantity ?>" class="quantity-input">
+                            <input type="number" name="quantity" value="<?= $item->quantity ?>" class="quantity-input" onchange="submitForm(this)">
                         </form>
                     </td>
                     <td>
@@ -40,13 +40,13 @@ include __DIR__ . '/../basiclayout/header.php';
         </tbody>
     </table>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('.quantity-input').change(function() {
-            $(this).closest('.quantity-form').submit();
-        });
-    });
+    function submitForm(input) {
+ 
+    var form = input.closest('.quantity-form');
+
+    form.submit();
+    }
     </script>
 
     <div class="card mt-5">

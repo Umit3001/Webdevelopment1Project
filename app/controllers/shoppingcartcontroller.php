@@ -21,10 +21,12 @@ class ShoppingcartController {
         if (isset($_SESSION['order_id'])) {
             $orderItems = $this->orderitemService->getOrderItemsByOrderId($_SESSION['order_id']);
             foreach ($orderItems as $item) {
-                $product = $this->productService->getProductById($item->product_id);
-                if ($product !== null) {
-                    $item->product = $product;
-                    $totalPrice += $item->quantity * $item->product->price;
+                if ($item !== null) {
+                    $product = $this->productService->getProductById($item->product_id);
+                    if ($product !== null) {
+                        $item->product = $product;
+                        $totalPrice += $item->quantity * $item->product->price;
+                    }
                 }
             }
         }
@@ -68,9 +70,16 @@ class ShoppingcartController {
             $order_item_id = $_POST['order_item_id'];
             $quantity = $_POST['quantity'];
 
-            $this->orderitemService->updateOrderItem($order_item_id, $quantity);
+            if ($quantity < 1) {
+                $this->orderitemService->deleteOrderItem($order_item_id);
+            }
+            else {
+                $this->orderitemService->updateOrderItem($order_item_id, $quantity);
+            }
+
             header('Location: /shoppingcart');
             exit();
+
         }
     }
 

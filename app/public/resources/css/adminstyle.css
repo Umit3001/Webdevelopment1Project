@@ -1,3 +1,54 @@
 .table .btn {
     margin-right: 5px;
 }
+
+.table {
+    background-color: #fff;
+    color: #333;
+}
+
+.table th,
+.table td {
+
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    .table-responsive {
+
+        margin: 0;
+    }
+
+    .table thead {
+
+        display: none;
+    }
+
+    .table tr {
+
+        display: block;
+        margin-bottom: 0.6em;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table td {
+
+        display: block;
+        text-align: right;
+        font-size: 0.8em;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .table td:last-child {
+
+        border-bottom: none;
+    }
+
+    .table td:before {
+
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
